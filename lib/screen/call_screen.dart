@@ -259,6 +259,11 @@ class _CallScreenState extends State<CallScreen> {
                   _remoteRTCVideoRenderer,
                   objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
                 ),
+                // RTCVideoView(
+                //   _localRTCVideoRenderer,
+                //   mirror: isFrontCameraSelected,
+                //   objectFit: RTCVideoViewObjectFit.RTCVideoViewObjectFitCover,
+                // ),
                 Positioned(
                   right: 20,
                   bottom: 20,

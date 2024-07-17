@@ -12,7 +12,7 @@ class JoinScreen extends StatefulWidget {
 }
 
 class _JoinScreenState extends State<JoinScreen> {
-  //3: define  incomingSDPOffer varible and  remoteCallerIdTextEditingController 
+  //3: define  incomingSDPOffer varible and  remoteCallerIdTextEditingController
 
   dynamic incomingSDPOffer;
   final remoteCallerIdTextEditingController = TextEditingController();
@@ -20,7 +20,7 @@ class _JoinScreenState extends State<JoinScreen> {
   @override
   void initState() {
     super.initState();
-    
+
     // listen for incoming video call
     SignallingService.instance.socket!.on("newCall", (data) {
       if (mounted) {
@@ -36,7 +36,7 @@ class _JoinScreenState extends State<JoinScreen> {
     required String calleeId,
     dynamic offer,
   }) {
-    Navigator.push(            
+    Navigator.push(
       context,
       MaterialPageRoute(
         builder: (_) => CallScreen(
@@ -51,7 +51,7 @@ class _JoinScreenState extends State<JoinScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.onPrimary,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("P2P Call App"),
@@ -106,7 +106,9 @@ class _JoinScreenState extends State<JoinScreen> {
                       onPressed: () {
                         _joinCall(
                           callerId: widget.selfCallerId,
-                          calleeId: remoteCallerIdTextEditingController.text.trim().toString(),
+                          calleeId: remoteCallerIdTextEditingController.text
+                              .trim()
+                              .toString(),
                         );
                       },
                     ),
